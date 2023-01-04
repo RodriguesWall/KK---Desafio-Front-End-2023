@@ -4,25 +4,26 @@
   margin-bottom: 15px;
   padding: 0% 5% 0% 5% !important;
   display: flex;
-  width: 100%;
   align-items: center;
+  justify-content: space-between;
 
   ul {
     margin: 0px !important;
     display: flex;
     justify-content: flex-end;
   }
+}
 
-  li {
-    display: flex;
-    margin-right: 20px;
-    color: azure;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-  }
+.menu {
+  display: flex;
+  margin-right: 20px;
+  color: azure;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: auto;
+  cursor: pointer;
+}
 
-  li:hover {
-    font-weight: 700;
-  }
+.menu:hover {
+  font-weight: 700;
 }

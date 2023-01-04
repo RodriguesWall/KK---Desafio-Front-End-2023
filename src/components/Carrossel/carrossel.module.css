@@ -1,6 +1,6 @@
 .container {
     height: 100%;
-    width: 100%;
+    width: 95%;
     margin-bottom: 80px;
     margin-left: auto;
     margin-right: auto;
@@ -19,6 +19,10 @@
     background-size: cover;
     position: relative;
     z-index: 1;
+}
+
+.slick-arrow .slick-next {
+    right: 0px !important;
 }
 
 @media (max-width: 767px) {
