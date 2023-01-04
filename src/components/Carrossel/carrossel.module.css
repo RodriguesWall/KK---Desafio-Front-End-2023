@@ -1,0 +1,33 @@
+.container {
+    height: 100%;
+    width: 100%;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.imagem {
+    height: 60px;
+    width: 90%;
+    object-fit: fill;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 767px) {
+
+    .container {
+        margin-bottom: 50px;
+    }
+
+    .imagem {
+        height: 30vw !important;
+    }
+}

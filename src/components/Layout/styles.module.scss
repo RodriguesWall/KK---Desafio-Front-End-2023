@@ -1,0 +1,28 @@
+.background {
+  background-color: #b9234b;
+  height: 70px;
+  margin-bottom: 15px;
+  padding: 0% 5% 0% 5% !important;
+  display: flex;
+  width: 100%;
+  align-items: center;
+
+  ul {
+    margin: 0px !important;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  li {
+    display: flex;
+    margin-right: 20px;
+    color: azure;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  li:hover {
+    font-weight: 700;
+  }
+}
