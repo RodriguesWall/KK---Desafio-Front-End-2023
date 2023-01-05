@@ -1,0 +1,83 @@
+@import "../../assets/styles/global";
+
+
+@media (max-width: 767px) {
+
+  .headerCart {
+    display: none !important;
+  }
+}
+
+.boxProduct {
+  width: 90%;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerCart {
+  border-bottom: 1px solid $color-text-secondary;
+}
+
+.headerCart span {
+  color: $color-text-primary;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.footerCart {
+  border-top: 1px solid $color-text-secondary;
+}
+
+.footerCart p {
+  justify-content: end;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+
+  span {
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+}
+
+.footerCart div {
+  justify-content: space-between;
+  display: flex;
+}
+
+
+.bodyCart {
+  min-height: 200px;
+}
+
+
+.btnFinish {
+  background-color: $color-primary !important;
+  border-color: $color-secondary !important;
+  font-size: 0.9rem !important;
+}
+
+.btnFinish:hover {
+  background-color: $color-secondary !important;
+  border-color: $color-primary !important;
+  color: $color-primary !important;
+}
+
+.linkCart {
+  display: flex;
+  margin-right: 30px;
+  color: $color-primary;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: auto;
+  cursor: pointer;
+}
+
+.linkCart:hover {
+  font-weight: 700;
+  color: $color-primary;
+}

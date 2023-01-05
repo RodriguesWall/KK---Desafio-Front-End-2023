@@ -1,7 +1,7 @@
 
 import Pagination from 'react-bootstrap/Pagination';
 import React, {useState, useEffect} from "react"
-import styles from "./styles.module.scss";
+import "./styles.scss";
 
 const PaginationComponent = ({
   pageNumber,
@@ -28,7 +28,7 @@ const PaginationComponent = ({
 
   return (
     <>
-      <Pagination className={styles.color}>
+      <Pagination className="containerPagination">
           <Pagination.Prev  onClick={()=>{goToPage(currentPage > 0 ?(currentPage -1):(0))}} />
         {page.map((item) => {
           let init = (currentPage+1) - 3;

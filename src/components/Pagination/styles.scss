@@ -1,0 +1,17 @@
+@import "../../assets/styles/global";
+
+
+.containerPagination {
+
+  .active>.page-link,
+  .page-link.active {
+    background-color: $color-primary;
+    border-color: $color-secondary;
+    color: $color-secondary;
+  }
+
+  .page-link {
+    color: $color-primary;
+  }
+
+}

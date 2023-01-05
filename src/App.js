@@ -5,23 +5,26 @@ import Authmiddleware from "./routes/middleware"
 import AllRoutes from "./routes/routes";
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { CartProvider } from './contexts/cartContext';
 
 
 export default function App() {
   return (
     <React.Fragment>
       <Router>
-        <Switch>
-          {AllRoutes.map((route, idx) => (
-            <Authmiddleware
-              path={route.path}
-              layout={Layout}
-              component={route.component}
-              key={idx}
-              exact
-            />
-          ))}
-        </Switch>
+        <CartProvider>
+          <Switch>
+            {AllRoutes.map((route, idx) => (
+              <Authmiddleware
+                path={route.path}
+                layout={Layout}
+                component={route.component}
+                key={idx}
+                exact
+              />
+            ))}
+          </Switch>
+        </CartProvider>
       </Router>
     </React.Fragment>
   );

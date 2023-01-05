@@ -13,13 +13,13 @@ const Footer = () => {
                 <img src={Logo} />
               </Link>
             </Col>
-            <Col xs={6} md={6}>
+            <Col xs={12} md={6}>
               <span>Links Úteis</span>
               <Link className={styles.menuFooter} to="/product">Produtos</Link>
               <Link className={styles.menuFooter} to="/cart">Carrinho</Link>
               <Link className={styles.menuFooter} to="/doc">Documentação do Projeto</Link>
             </Col>
-            <Col xs={6} md={3}>
+            <Col xs={12} md={3}>
               <span>Contatos</span>
               <Link className={styles.menuFooter}>+55 (94) 99262-3788</Link>
               <Link className={styles.menuFooter}>rodrigues@portalctech.com.br</Link>

@@ -23,6 +23,7 @@
   font-size: 0.8rem;
   text-align: center;
   display: flex;
+  height: 30px;
   margin-top: 5px;
 }
 
@@ -33,9 +34,9 @@
 .boxProduct p {
   justify-content: center;
   display: flex;
-  margin-top: 15px;
+  margin-top: 20px;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: $color-text-primary;
 }
 

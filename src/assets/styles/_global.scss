@@ -1,11 +1,11 @@
 $color-primary: #b9234b;
 $color-secondary: azure;
 $color-text-primary: #414141;
-$color-text-secundary: #6c6c6c;
+$color-text-secondary: #6c6c6c;
 
 :export {
   colorPrimary: $color-primary;
   colorSecondary: $color-secondary;
   colorTextPrimary: $color-text-primary;
-  colorTextSecundary: $color-text-secundary;
+  colorTextSecondary: $color-text-secondary;
 }

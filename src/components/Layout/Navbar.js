@@ -3,10 +3,11 @@ import { Alert, Col, Container, Row } from "react-bootstrap";
 import { Link, Redirect } from 'react-router-dom'
 import styles from './styles.module.scss';
 import Logo from '../../assets/logo.png';
+import {useCart} from "../../hooks/useCart";
 
 
 const Navbar = () => {
-
+  const { numberCart, setNumberCart} = useCart();
 
   return (
     <React.Fragment>
@@ -18,7 +19,12 @@ const Navbar = () => {
           </Col>
           <Col xs={8} md={8} className={styles.ulMenu}>
             <Link className={styles.menu} to="/product">Produtos</Link>
-            <Link className={styles.menu} to="/cart">Carrinho</Link>
+            <Link className={styles.menu} to="/cart">
+              Carrinho
+              <span className={numberCart!= null&&(styles.numberCart)}>
+                {numberCart!= null && (numberCart)}
+              </span>
+            </Link>
           </Col>
         </Row>
     </React.Fragment>

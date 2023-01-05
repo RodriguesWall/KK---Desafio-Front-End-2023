@@ -32,11 +32,26 @@
   color: $color-secondary;
 }
 
+.numberCart {
+  position: relative;
+  margin-top: -3px;
+  font-size: 0.5rem;
+  color: $color-primary;
+  font-weight: 400;
+  margin-left: 0px;
+  align-items: center;
+  text-align: center;
+  background: white;
+  height: 12px;
+  width: 12px;
+  border-radius: 12px;
+}
+
 .footer {
   width: 100%;
   min-height: 200px;
   padding-top: 20px;
-  margin-top: 50px;
+  margin-top: 60px !important;
   background-color: $color-primary;
   --bs-gutter-x: 0rem !important;
 }
