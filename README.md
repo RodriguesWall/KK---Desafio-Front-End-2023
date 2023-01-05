@@ -1,6 +1,8 @@
 # Project Document
 --------------------------------------------------------
 ## Front End
+I Developed the front end project using React Js.
+
 ### Run Project
 `yarn start` or use `make start` for change .env 
 
@@ -12,6 +14,8 @@
 Builds the app for production to the `build` folder
 
 ## BACK END
+I Developed the Back End project using Node Js and MySql.
+
 ### Rotas
 API_URL = https://zap-plus-api.herokuapp.com
   Product List | GET | `/kuantoKusta/product/list`
