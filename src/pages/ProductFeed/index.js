@@ -6,35 +6,38 @@ import Services from '../../services/select'
 import { toast } from 'react-toastify'
 import { Alert, Col, Container, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
+import PaginationComponent from '../../components/Pagination';
 
 
 const ProductFeed = () => {
 
-  const [infoFeed, setInfoFeed] = useState({
-    rowsPerPage: 15,
-    currentPage: 0,
-    searchTerm: ''
-  })
+  const [rowsPerPage, setRowsPerPage] = useState(15);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [page, setPage] = useState(0);
+  const [searchTerm, setSearchTerm] = useState(0);
+  
   const [products, setProducts] = useState([])
 
   useEffect(() => {
     loadProduct();
   }, [
-    infoFeed.rowsPerPage,
-    infoFeed.currentPage,
-    infoFeed.searchTerm,
+    rowsPerPage,
+    currentPage,
+    searchTerm,
   ])
 
   const loadProduct = async () => {
 
     const response = await Services.listProduct({
-      rowsPerPage: infoFeed.rowsPerPage,
-      page: infoFeed.currentPage,
-      searchTerm:  infoFeed.searchTerm
+      rowsPerPage: rowsPerPage,
+      page: currentPage,
+      searchTerm:  searchTerm
     })
 
     if (response?.status === 200) {
       setProducts(response?.data?.data?.item);
+      //setPage(response?.data?.data?.totalPages);
+      setPage(2);
     } else {
       toast.error("Erro ao listar os produtos")
       return false
@@ -53,6 +56,13 @@ const ProductFeed = () => {
             )
           })}
         </Row>
+        <Col className={styles.pagination}>
+          <PaginationComponent 
+            pageNumber={page} 
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+          </Col>
     </React.Fragment>
   )
 }

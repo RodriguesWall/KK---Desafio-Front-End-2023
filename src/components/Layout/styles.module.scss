@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  --bs-gutter-x: 0rem !important;
 }
 
 .ulMenu {
@@ -29,4 +30,50 @@
 .menu:hover {
   font-weight: 700;
   color: $color-secondary;
+}
+
+.footer {
+  width: 100%;
+  min-height: 200px;
+  padding-top: 20px;
+  margin-top: 50px;
+  background-color: $color-primary;
+  --bs-gutter-x: 0rem !important;
+}
+
+.footer div {
+  justify-content: center;
+  padding: 20px;
+  text-align: start;
+}
+
+.footer span {
+  color: $color-secondary;
+  font-size: 1.4rem;
+}
+
+.developedBy {
+  display: flex;
+  text-align: center;
+}
+
+.footer p {
+  color: $color-secondary;
+  font-size: 0.8rem;
+}
+
+.menuFooter {
+  display: flex;
+  margin-right: 30px;
+  margin-top: 5px;
+  color: $color-secondary;
+  font-size: 15px;
+  font-weight: 300;
+  text-decoration: auto;
+  cursor: pointer;
+}
+
+.menuFooter:hover {
+  color: $color-secondary;
+  font-weight: 400;
 }
