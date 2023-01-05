@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import { Alert, Col, Button, Row } from "react-bootstrap";
 import {convertMoney} from "../../utils/mask"
 
+
 function Product({item,handler}) {
   
   return (
@@ -10,8 +11,7 @@ function Product({item,handler}) {
       <Col className={styles.boxProduct}>
         <img src={item.picture} className={styles.imgProduct}/>
         <span>{item.name}</span>
-        <p>
-          
+        <p>          
           {convertMoney(item.price)}
         </p>
         <Button

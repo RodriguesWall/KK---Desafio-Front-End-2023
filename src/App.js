@@ -3,7 +3,6 @@ import Layout from './components/Layout/Layout';
 import { Switch, BrowserRouter as Router } from "react-router-dom"
 import Authmiddleware from "./routes/middleware"
 import AllRoutes from "./routes/routes";
-import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { CartProvider } from './contexts/cartContext';
 

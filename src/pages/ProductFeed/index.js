@@ -8,7 +8,7 @@ import { Alert, Col, Container, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
 import PaginationComponent from '../../components/Pagination';
 import {useCart} from "../../hooks/useCart";
-
+import { calcCart } from '../../utils/functions';
 
 const ProductFeed = () => {
 
@@ -17,7 +17,7 @@ const ProductFeed = () => {
   const [page, setPage] = useState(0);
   const [searchTerm, setSearchTerm] = useState(0);
   const [products, setProducts] = useState([])
-  const { setNumberCart, setCart } = useCart();
+  const { setNumberCart, setCart, setTotalCart } = useCart();
 
 
   useEffect(() => {
@@ -73,8 +73,10 @@ const ProductFeed = () => {
     }
 
     window.localStorage.setItem("cart@KuantoKusta", JSON.stringify(cartStorage));    
-    setNumberCart(cartStorage.length)
+    let result = calcCart(cartStorage);
     setCart(cartStorage)
+    setTotalCart(result.total);
+    setNumberCart(result.quant);
 
     toast.success("Produto adicionado com sucesso", {
       autoClose: 1000

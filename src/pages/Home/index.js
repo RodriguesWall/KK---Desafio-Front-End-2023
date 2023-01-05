@@ -8,6 +8,7 @@ import { toast } from 'react-toastify'
 import { Alert, Col, Container, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
 import Product from '../../components/Product'
+import { calcCart } from '../../utils/functions';
 
 
 const Home = () => {
@@ -15,7 +16,7 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [products, setProducts] = useState([])
 
-  const { setNumberCart, setCart } = useCart();
+  const { setNumberCart, setCart, setTotalCart } = useCart();
 
 
   useEffect(() => {
@@ -45,7 +46,6 @@ const Home = () => {
     let cartStorage = localStorage.getItem("cart@KuantoKusta");
     cartStorage = JSON.parse(cartStorage);
     cartStorage = cartStorage!= null ? (cartStorage):([]);
-    
     let check = cartStorage.find(info => info.id === item.id);
         
     if(check){
@@ -58,17 +58,18 @@ const Home = () => {
         }
         return dados;
       })
-   
     }else{
       cartStorage.push({
         ...item,
         quant: 1
       })
     }
-
+    
     window.localStorage.setItem("cart@KuantoKusta", JSON.stringify(cartStorage));    
-    setNumberCart(cartStorage.length)
+    let result = calcCart(cartStorage);
     setCart(cartStorage)
+    setTotalCart(result.total);
+    setNumberCart(result.quant);
 
     toast.success("Produto adicionado com sucesso", {
       autoClose: 1000

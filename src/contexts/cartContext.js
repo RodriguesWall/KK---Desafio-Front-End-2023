@@ -1,4 +1,6 @@
 import React, { createContext,useEffect, useState, useContext } from 'react';
+import { calcCart } from '../utils/functions';
+
 const CartContext = createContext();
 
 function CartProvider({ children }) {
@@ -10,19 +12,12 @@ function CartProvider({ children }) {
   useEffect(() => {
     const cartStorage = JSON.parse(localStorage.getItem("cart@KuantoKusta"));
     if (cartStorage) {
-      setCart(cartStorage)
-
-      let result = cartStorage.reduce((acc, item) => {     
-        return {
-          quant: acc.quant+item.quant,
-          total: acc.total+(item.price*item.quant),
-        }
-      }, {quant:0, total:0});
-      
+      let result = calcCart(cartStorage);
+      setCart(cartStorage)  
       setTotalCart(result.total);
       setNumberCart(result.quant);
     }
-}, [numberCart]);
+}, []);
 
 //Optei por utilizar Context para garantir que as informações do carrinho de compra estejam disponiveis para todas as telas do projeto
 //garantindo atualização em tempo real por todo projeto sem necessidade de recarregar a tela
