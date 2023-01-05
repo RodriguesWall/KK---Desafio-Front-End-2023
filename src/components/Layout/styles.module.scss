@@ -1,24 +1,26 @@
+@import "../../assets/styles/global";
+
 .background {
-  background-color: #b9234b;
+  background-color: $color-primary;
   height: 70px;
   margin-bottom: 15px;
   padding: 0% 5% 0% 5% !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
 
-  ul {
-    margin: 0px !important;
-    display: flex;
-    justify-content: flex-end;
-  }
+.ulMenu {
+  margin: 0px !important;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .menu {
   display: flex;
-  margin-right: 20px;
-  color: azure;
-  font-size: 14px;
+  margin-right: 30px;
+  color: $color-secondary;
+  font-size: 15px;
   font-weight: 500;
   text-decoration: auto;
   cursor: pointer;
@@ -26,4 +28,5 @@
 
 .menu:hover {
   font-weight: 700;
+  color: $color-secondary;
 }

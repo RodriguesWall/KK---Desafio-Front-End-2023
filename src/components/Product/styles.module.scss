@@ -1,0 +1,52 @@
+@import "../../assets/styles/global";
+
+.imgProduct {
+  width: 100%;
+}
+
+.boxProduct {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 1px 10px 1px #d6d6d691;
+  cursor: pointer;
+}
+
+.boxProduct:hover {
+  box-shadow: 0 1px 10px 1px $color-primary;
+  -webkit-transition: box-shadow ease-out 0.6s;
+  transition: box-shadow ease-out 0.6s;
+}
+
+.boxProduct span {
+  font-size: 0.8rem;
+  text-align: center;
+  display: flex;
+  margin-top: 5px;
+}
+
+.boxProduct p span {
+  margin-right: 5px;
+}
+
+.boxProduct p {
+  justify-content: center;
+  display: flex;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: $color-text-primary;
+}
+
+.btnBuy {
+  background-color: $color-primary !important;
+  border-color: $color-secondary !important;
+  font-size: 0.9rem !important;
+}
+
+.btnBuy:hover {
+  background-color: $color-secondary !important;
+  border-color: $color-primary !important;
+  color: $color-primary !important;
+}

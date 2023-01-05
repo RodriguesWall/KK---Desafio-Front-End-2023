@@ -25,3 +25,12 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+
+# DOCUMENTAÇÃO DO BACK END
+
+API_URL = https://zap-plus-api.herokuapp.com
+
+### Product List | GET | /kuantoKusta/product/list
+  ### Params: rowsPerPage (int), page (int), searchTerm (text)
+ 

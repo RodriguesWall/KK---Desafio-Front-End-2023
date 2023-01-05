@@ -1,0 +1,22 @@
+@import "../../assets/styles/global";
+
+.container {
+    height: 100%;
+    width: 90%;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container span {
+    font-size: 2rem;
+    color: $color-text-primary;
+}
+
+@media (max-width: 767px) {
+
+    .container {
+        margin-bottom: 30px;
+    }
+}

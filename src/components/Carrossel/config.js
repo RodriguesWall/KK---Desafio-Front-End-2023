@@ -37,7 +37,7 @@ export const settings = {
 };
 
 export const banners = [
-  {foto: 'https://s1.kuantokusta.pt/img_upload/conf_slides/1743/CuidadoZdoZCabelo_63af19fa53ef1.png'},
-  {foto: 'https://s1.kuantokusta.pt/img_upload/conf_slides/1742/SaldosZyZmodaZeZacessrios_63af18f2d5dcf.png'},
-  {foto: 'https://s1.kuantokusta.pt/img_upload/conf_slides/1741/BlogZCuidarZdaZPeleZ_63af1863bc565.png'}
+  {foto: 'https://eventozz.s3.us-west-1.amazonaws.com/1.png'},
+  {foto: 'https://eventozz.s3.us-west-1.amazonaws.com/2.png'},
+  {foto: 'https://eventozz.s3.us-west-1.amazonaws.com/3.png'}
 ]

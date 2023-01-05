@@ -1,6 +1,6 @@
 .container {
     height: 100%;
-    width: 95%;
+    width: 90%;
     margin-bottom: 80px;
     margin-left: auto;
     margin-right: auto;
@@ -9,7 +9,7 @@
 
 .imagem {
     height: 60px;
-    width: 90%;
+    width: 100%;
     object-fit: fill;
     display: block;
     margin-left: auto;
@@ -29,9 +29,5 @@
 
     .container {
         margin-bottom: 50px;
-    }
-
-    .imagem {
-        height: 30vw !important;
     }
 }

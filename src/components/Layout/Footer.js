@@ -6,7 +6,7 @@ const Footer = () => {
     <React.Fragment>
        <Row>
           <Col xs={12} sm={6}>
-            <span>TESTE</span>
+            <span>FOOTER</span>
           </Col>
         </Row>
     </React.Fragment>
