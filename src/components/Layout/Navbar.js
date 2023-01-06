@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Alert, Col, Container, Row } from "react-bootstrap";
-import { Link, Redirect } from 'react-router-dom'
+import React from 'react';
+import { Col, Row } from "react-bootstrap";
+import { Link } from 'react-router-dom'
 import styles from './styles.module.scss';
 import Logo from '../../assets/logo.png';
 import {useCart} from "../../hooks/useCart";
 
 
 const Navbar = () => {
-  const { numberCart, setNumberCart} = useCart();
+  const { numberCart } = useCart();
 
   return (
     <React.Fragment>
@@ -18,11 +18,11 @@ const Navbar = () => {
           </Link>
           </Col>
           <Col xs={8} md={8} className={styles.ulMenu}>
-            <Link className={styles.menu} to="/product">Produtos</Link>
+            <Link className={styles.menu} to="/products">Produtos</Link>
             <Link className={styles.menu} to="/cart">
               Carrinho
-              <span className={numberCart!= null&&(styles.numberCart)}>
-                {numberCart!= null && (numberCart)}
+              <span className={(numberCart!= 0 && numberCart!= null) && (styles.numberCart)}>
+                {numberCart!= 0 && (numberCart)}
               </span>
             </Link>
           </Col>

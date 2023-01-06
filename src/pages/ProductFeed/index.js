@@ -4,7 +4,7 @@ import Header from '../../components/Header'
 import Product from '../../components/Product'
 import Services from '../../services/select'
 import { toast } from 'react-toastify'
-import { Alert, Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import styles from "./styles.module.scss";
 import PaginationComponent from '../../components/Pagination';
 import {useCart} from "../../hooks/useCart";
@@ -15,7 +15,6 @@ const ProductFeed = () => {
   const [rowsPerPage, setRowsPerPage] = useState(15);
   const [currentPage, setCurrentPage] = useState(0);
   const [page, setPage] = useState(0);
-  const [searchTerm, setSearchTerm] = useState(0);
   const [products, setProducts] = useState([])
   const { setNumberCart, setCart, setTotalCart } = useCart();
 
@@ -24,23 +23,23 @@ const ProductFeed = () => {
     loadProduct();
   }, [
     rowsPerPage,
-    currentPage,
-    searchTerm,
+    currentPage
   ])
 
-
+const handlerCurrentPage = (info) =>{
+  setCurrentPage(info)
+  window.scroll(0, 0);
+}
   const loadProduct = async () => {
 
     const response = await Services.listProduct({
       rowsPerPage: rowsPerPage,
-      page: currentPage,
-      searchTerm:  searchTerm
+      page: currentPage
     })
 
     if (response?.status === 200) {
       setProducts(response?.data?.data?.item);
-      //setPage(response?.data?.data?.totalPages);
-      setPage(2);
+      setPage(response?.data?.data?.totalPages);
     } else {
       toast.error("Erro ao listar os produtos")
       return false
@@ -100,7 +99,7 @@ const ProductFeed = () => {
           <PaginationComponent 
             pageNumber={page} 
             currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
+            setCurrentPage={handlerCurrentPage}
           />
           </Col>
     </React.Fragment>

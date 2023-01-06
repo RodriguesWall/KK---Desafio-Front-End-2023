@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Alert, Col, Container, Row } from "react-bootstrap";
-import { Link, Redirect } from 'react-router-dom'
+import React from 'react';
+import { Col, Row } from "react-bootstrap";
+import { Link } from 'react-router-dom'
 import styles from './styles.module.scss';
 import Logo from '../../assets/logo.png';
 
@@ -15,7 +15,7 @@ const Footer = () => {
             </Col>
             <Col xs={12} md={6}>
               <span>Links Úteis</span>
-              <Link className={styles.menuFooter} to="/product">Produtos</Link>
+              <Link className={styles.menuFooter} to="/products">Produtos</Link>
               <Link className={styles.menuFooter} to="/cart">Carrinho</Link>
               <Link className={styles.menuFooter} to="/doc">Documentação do Projeto</Link>
             </Col>

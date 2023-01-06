@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import {useContext } from "react";
 import {CartContext} from '../contexts/cartContext'
 
 function useCart() {

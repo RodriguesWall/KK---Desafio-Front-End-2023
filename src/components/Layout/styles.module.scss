@@ -3,12 +3,14 @@
 .background {
   background-color: $color-primary;
   height: 70px;
-  margin-bottom: 15px;
   padding: 0% 5% 0% 5% !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
   --bs-gutter-x: 0rem !important;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
 }
 
 .ulMenu {

@@ -5,4 +5,4 @@ install: ## Install the dependencies
 	@bash ./scripts/install.sh
 
 start: ## Start project
-	@bash ./scripts/install.sh
+	@bash ./scripts/start.sh

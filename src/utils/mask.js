@@ -1,9 +1,9 @@
 export const convertMoney = (string) => {
   string = Number(string);
-  string = string?.toLocaleString("pt-BR", {
+  string = string?.toLocaleString("de-DE", {
     minimumFractionDigits: 2,
     style: "currency",
-    currency: "BRL",
+    currency: "EUR",
   });
   return string;
 };

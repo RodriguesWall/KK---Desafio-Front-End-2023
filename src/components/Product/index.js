@@ -1,26 +1,34 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import { Alert, Col, Button, Row } from "react-bootstrap";
+import { Col, Button } from "react-bootstrap";
 import {convertMoney} from "../../utils/mask"
+import { Link } from 'react-router-dom'
 
 
 function Product({item,handler}) {
   
   return (
-    <Col xs={12} md={3}>
-      <Col className={styles.boxProduct}>
-        <img src={item.picture} className={styles.imgProduct}/>
-        <span>{item.name}</span>
-        <p>          
-          {convertMoney(item.price)}
-        </p>
-        <Button
-         className={styles.btnBuy}
-         onClick={()=> handler(item)}
-         >
-          Adicionar ao Carrinho
-        </Button>
-      </Col>
+    <Col xs={6} md={3}>
+        <Col className={styles.boxProduct} >
+            <Link to={"/product/"+item.id}>
+              <img 
+                src={item.picture}
+                className={styles.imgProduct}
+                loading="lazy" 
+              />
+              <span>{item.name}</span>
+              <p>          
+                {convertMoney(item.price)}
+              </p>
+            </Link>
+            <Button
+            className={styles.btnBuy}
+            onClick={()=> handler(item)}
+            >
+              Adicionar ao Carrinho
+            </Button>
+          </Col>
+        
     </Col>
   );
 }

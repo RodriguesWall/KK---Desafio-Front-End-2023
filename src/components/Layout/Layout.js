@@ -2,11 +2,13 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 const Layout = ({ children }) => {
-console.log(children)
+  
   return (
     <>
       <Navbar />
+        <div style={{paddingTop: 90}}>
         {children}
+        </div>
       <Footer />
     </>
   );

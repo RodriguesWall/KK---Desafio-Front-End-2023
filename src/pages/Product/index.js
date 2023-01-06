@@ -1,39 +1,32 @@
 
 import React, { useState, useEffect } from 'react'
-import Carrossel from '../../components/Carrossel'
-import {useCart} from "../../hooks/useCart";
+import Header from '../../components/Header'
+import Product from '../../components/IndividualProduct'
 import Services from '../../services/select'
 import { toast } from 'react-toastify'
-import { Row } from "react-bootstrap";
-import styles from "./styles.module.scss";
-import Product from '../../components/Product'
+import { Container } from "react-bootstrap";
+import {useCart} from "../../hooks/useCart";
 import { calcCart } from '../../utils/functions';
+import { useParams } from 'react-router-dom';
 
+const ProductFeed = () => {
 
-const Home = () => {
-  const [rowsPerPage, setRowsPerPage] = useState(8);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [products, setProducts] = useState([])
-
+  const { id } = useParams();
+  const [product, setProduct] = useState([])
   const { setNumberCart, setCart, setTotalCart } = useCart();
-
 
   useEffect(() => {
     loadProduct();
   }, [
-    rowsPerPage,
-    currentPage
+    id
   ])
 
+
   const loadProduct = async () => {
-
-    const response = await Services.listProduct({
-      rowsPerPage: rowsPerPage,
-      page: currentPage
-    })
-
+    const response = await Services.getEspecificProduct({id})
     if (response?.status === 200) {
-      setProducts(response?.data?.data?.item);
+      console.log(response)
+      setProduct(response?.data?.data);
     } else {
       toast.error("Erro ao listar os produtos")
       return false
@@ -74,21 +67,18 @@ const Home = () => {
     })
   }
 
+
   return (
     <React.Fragment>
-        <Carrossel />
-        <Row className={styles.boxProduct}>
-          {products?.map((item, index) => {
-            return(
-              <Product 
-                item={item}
-                handler={addProduct}
-              />
-            )
-          })}
-        </Row>
+        <Container>
+        <Header title={"Produto"} />
+        <Product 
+          item={product}
+          handler={addProduct}
+        />
+        </Container>
     </React.Fragment>
   )
 }
 
-export default Home
+export default ProductFeed
